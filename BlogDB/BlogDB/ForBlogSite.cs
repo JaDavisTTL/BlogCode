@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BlogDB
 {
-    public partial class Form1 : Form
+    public partial class ForBlogSite : Form
     {
-        public Form1()
+        public ForBlogSite()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace BlogDB
 {
-    partial class Form1
+    partial class ForBlogSite
     {
         /// <summary>
         /// Required designer variable.
