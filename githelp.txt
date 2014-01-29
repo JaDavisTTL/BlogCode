@@ -16,9 +16,3 @@ git add --all ##Update the index not only where the working tree has a file matc
 
 git commit -m "message" ##commits the changes in the index to the branch that you're working on.
 
-##To commit to master do the following:
-git checkout master
-git merge branch # merge branch with master locally  
-##sort out any conflicts
-git push? 
-
