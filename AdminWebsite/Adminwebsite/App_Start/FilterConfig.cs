@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace AdminPage
+namespace Adminwebsite
 {
     public class FilterConfig
     {

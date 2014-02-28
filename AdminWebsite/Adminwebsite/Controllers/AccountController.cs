@@ -8,10 +8,10 @@ using System.Web.Security;
 using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
-using AdminPage.Filters;
-using AdminPage.Models;
+using Adminwebsite.Filters;
+using Adminwebsite.Models;
 
-namespace AdminPage.Controllers
+namespace Adminwebsite.Controllers
 {
     [Authorize]
     [InitializeSimpleMembership]

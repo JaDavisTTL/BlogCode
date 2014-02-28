@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Web.WebPages.OAuth;
-using AdminPage.Models;
+using Adminwebsite.Models;
 
-namespace AdminPage
+namespace Adminwebsite
 {
     public static class AuthConfig
     {

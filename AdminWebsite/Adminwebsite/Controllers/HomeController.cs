@@ -14,7 +14,7 @@ namespace AdminPage.Controllers
 
             return View();
         }
-       
-        
+
+
     }
 }
