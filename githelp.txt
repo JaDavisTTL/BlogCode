@@ -1,0 +1,18 @@
+##Please enter any helpful git commands you may find and what they do :)
+
+git clone https://github.com/JaDavisTTL/BlogCode ##Clones the git hub repo in to pre-desired folder
+
+git checkout -b branch ##switches to a new branch called 'branch' 
+
+git push origin branch ##commits your new branch to the repo
+
+git checkout branch ##checks out the branch branch to your local machine
+
+git status ##tells you what you've changed in your local branch compared to that of the repo
+
+git checkout -f ##discards the changes made to your local branch and reloads the branch from the repo; This CANNOT be UNDONE!!
+
+git add --all ##Update the index not only where the working tree has a file matching <pathspec> but also where the index already has an entry. This adds, modifies, and removes index entries to match the working tree. 
+
+git commit -m "message" ##commits the changes in the index to the branch that you're working on.
+
