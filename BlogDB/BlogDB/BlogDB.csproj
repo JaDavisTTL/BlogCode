@@ -59,16 +59,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ForBlogSiteDb.Designer.cs">
+    <Compile Include="Blog.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ForBlogSiteDb.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ForBlogSite.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ForBlogSite.Designer.cs">
-      <DependentUpon>ForBlogSite.cs</DependentUpon>
+      <DependentUpon>Blog.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,16 +75,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="ForBlogSiteDb.xsc">
-      <DependentUpon>ForBlogSiteDb.xsd</DependentUpon>
+    <None Include="Blog.xsc">
+      <DependentUpon>Blog.xsd</DependentUpon>
     </None>
-    <None Include="ForBlogSiteDb.xsd">
+    <None Include="Blog.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ForBlogSiteDb.Designer.cs</LastGenOutput>
+      <LastGenOutput>Blog.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ForBlogSiteDb.xss">
-      <DependentUpon>ForBlogSiteDb.xsd</DependentUpon>
+    <None Include="Blog.xss">
+      <DependentUpon>Blog.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -106,12 +100,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ForBlogSiteDb.mdf">
+    <Content Include="Blog.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ForBlogSiteDb_log.ldf">
+    <Content Include="Blog_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>ForBlogSiteDb.mdf</DependentUpon>
+      <DependentUpon>Blog.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
