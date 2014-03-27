@@ -13,9 +13,9 @@ namespace BlogService
     public class BlogService : IBlogService
     {
 
-        public void HelloBloggers()
+        public string HelloBloggers()
         {
-           Console.WriteLine("Hello Bloggers use our Services available!!!");
+           return("Hello Bloggers use our Services available!!!");
         }
     }
 }
