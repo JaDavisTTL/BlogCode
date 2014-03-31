@@ -14,6 +14,6 @@ namespace BlogService
     {
 
         [OperationContract]
-        void HelloBloggers();
+        string HelloBloggers();
     }
 }
