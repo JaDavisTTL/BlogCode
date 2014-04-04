@@ -15,7 +15,7 @@ namespace BlogService
 
         public string HelloBloggers()
         {
-           return("Hello Bloggers use our Services available!!!");
+           return("Hello Bloggers . We have consumed web Service Successfully!!!");
         }
     }
 }
