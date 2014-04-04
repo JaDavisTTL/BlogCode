@@ -17,5 +17,11 @@ namespace BlogService
         {
            return("Hello Bloggers use our Services available!!!");
         }
+
+        public string ReplayUsername(string Username)
+        {
+            return ("Hello " + " Username Thanks for your visit.  More features are coming soon!");
+        }
+
     }
 }
