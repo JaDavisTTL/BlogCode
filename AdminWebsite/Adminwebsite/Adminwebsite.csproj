@@ -278,6 +278,7 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <None Include="Web References\localhost\BlogService.disco" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -317,11 +318,17 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Web References\localhost\BlogService.wsdl" />
-    <Content Include="Web References\localhost\Reference.map">
+    <None Include="Web References\localhost\BlogService.wsdl" />
+    <None Include="Web References\localhost\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
+    <None Include="Web References\localhost\BlogService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\localhost\BlogService0.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -336,10 +343,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:50210/BlogService.svc%3fsingleWsdl">
+    <WebReferenceUrl Include="http://localhost/WebService/BlogService.svc">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\localhost\</RelPath>
-      <UpdateFromURL>http://localhost:50210/BlogService.svc%3fsingleWsdl</UpdateFromURL>
+      <UpdateFromURL>http://localhost/WebService/BlogService.svc</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

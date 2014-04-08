@@ -15,9 +15,9 @@ namespace AdminPage.Controllers
         {
            
 
-           Adminwebsite.localhost.BlogService Admin2webservice = new BlogService();
+           Adminwebsite.localhost.BlogService admin2Webservice = new BlogService();
 
-            ViewBag.Message = Admin2webservice.HelloBloggers();
+            ViewBag.Message = admin2Webservice.HelloBloggers();
 
             return View();
         }
