@@ -26,7 +26,7 @@ namespace CustomerSite.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:50210/BlogService.svc")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/service/BlogService.svc")]
         public string CustomerSite_CustomerWebservice_BlogService {
             get {
                 return ((string)(this["CustomerSite_CustomerWebservice_BlogService"]));

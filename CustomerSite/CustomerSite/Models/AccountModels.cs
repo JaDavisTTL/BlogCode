@@ -55,6 +55,13 @@ namespace CustomerSite.Models
         public string ConfirmPassword { get; set; }
     }
 
+    public class Echo
+    {
+        [Required]
+        [Display(Name = "Your Name")]
+        public string UserNameEcho { get; set; }
+    }
+
     public class LoginModel
     {
         [Required]

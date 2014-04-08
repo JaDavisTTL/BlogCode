@@ -17,6 +17,6 @@ namespace BlogService
         string HelloBloggers();
 
         [OperationContract]
-        string ReplayUsername(string Username);
+        string ReplayUsername(string UserNameEcho);
     }
 }

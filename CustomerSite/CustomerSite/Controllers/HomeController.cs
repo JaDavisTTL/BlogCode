@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -7,20 +8,29 @@ using CustomerSite.CustomerWebservice;
 
 namespace CustomerSite.Controllers
 {
+     
     public class HomeController : Controller
     {
-        CustomerWebservice.BlogService obj = new BlogService();
+       
 
-
-        public ActionResult Index()
+        public ActionResult Index(string UserNameEcho)
         {
-            //ViewBag.Message = "This page is for general users.  Cool features are coming soon! ;)";
-            ViewBag.Message = obj.ReplayUsername("Maria");
+          CustomerWebservice.BlogService obj = new BlogService();
 
-            return View();
+            if (UserNameEcho==null)
+            {
+              //  ViewBag.Message = "Please enter a username in the above field";
+                return View();
+            }
+            else 
+            {
+                ViewBag.Message = obj.ReplayUsername(UserNameEcho);
+                return View();
+            }
         }
+        
 
-      
+
         public ActionResult About()
         {
             ViewBag.Message = "Your app description page.";
@@ -36,5 +46,6 @@ namespace CustomerSite.Controllers
         }
 
 
+      
     }
 }

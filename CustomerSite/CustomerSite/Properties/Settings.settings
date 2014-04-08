@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="CustomerSite_CustomerWebservice_BlogService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost:50210/BlogService.svc</Value>
+      <Value Profile="(Default)">http://localhost/service/BlogService.svc</Value>
     </Setting>
   </Settings>
 </SettingsFile>
