@@ -1,0 +1,27 @@
+Please try this out
+
+open git bash and locate your BlogCode file within git bash
+
+git checkout NugetBranch
+git pull
+
+cd CustomerSite
+ls
+should see no packages folder and should see a new .nuget folder
+
+open CustomerSite.sln click run - should load webpages
+
+Check the same for admin site
+
+
+-----------------------------------------------------------------------------
+
+Setting up NuGet for a project:
+
+Right click on the solution in the solution expoler in VS
+
+Click 'Enable NuGet Package Restore' 
+
+Click 'yes'
+
+You are then done :) 
