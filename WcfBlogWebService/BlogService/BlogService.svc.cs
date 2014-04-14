@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using Nhibernate;
 
 namespace BlogService
 {
@@ -17,5 +18,22 @@ namespace BlogService
         {
            return("Hello Bloggers use our Services available!!!");
         }
+
+
+        public void CreateAUser(string username, string password)
+        {
+            UserRepository repository = new UserRepository();
+            repository.Insert(username,password);
+
+        }
+
+        public string RetrieveUser(int UserID)
+        {
+            UserRepository repository = new UserRepository();
+            var fromDb = repository.GetById(UserID);
+            return fromDb.UserName;
+
+        }
+        
     }
 }

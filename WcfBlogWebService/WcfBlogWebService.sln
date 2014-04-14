@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogService", "BlogService\BlogService.csproj", "{84B05E57-43BF-42A0-8EBD-9B81B38395F8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{C2894CD1-B67E-4819-846B-4A01754E3A7A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{84B05E57-43BF-42A0-8EBD-9B81B38395F8} = {84B05E57-43BF-42A0-8EBD-9B81B38395F8}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{35381188-FC90-4174-83E2-3055E6A055D3}"
 	ProjectSection(SolutionItems) = preProject
@@ -11,6 +14,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{353811
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhibernateDB", "FluentNhibernate\NhibernateDB.csproj", "{E8EB682E-6807-4B2C-89FA-3AEFD09E6774}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject_WebserviceToDb", "TestProject_WebserviceToDb\TestProject_WebserviceToDb.csproj", "{2B9238C4-5ED7-48E2-B3EA-8239A418ACD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +33,14 @@ Global
 		{C2894CD1-B67E-4819-846B-4A01754E3A7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2894CD1-B67E-4819-846B-4A01754E3A7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2894CD1-B67E-4819-846B-4A01754E3A7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8EB682E-6807-4B2C-89FA-3AEFD09E6774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8EB682E-6807-4B2C-89FA-3AEFD09E6774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8EB682E-6807-4B2C-89FA-3AEFD09E6774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8EB682E-6807-4B2C-89FA-3AEFD09E6774}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B9238C4-5ED7-48E2-B3EA-8239A418ACD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B9238C4-5ED7-48E2-B3EA-8239A418ACD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B9238C4-5ED7-48E2-B3EA-8239A418ACD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B9238C4-5ED7-48E2-B3EA-8239A418ACD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

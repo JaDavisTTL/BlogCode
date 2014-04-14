@@ -15,5 +15,11 @@ namespace BlogService
 
         [OperationContract]
         string HelloBloggers();
+
+        [OperationContract]
+        void CreateAUser(string username, string password);
+
+        [OperationContract]
+        string RetrieveUser(int ID);
     }
 }
