@@ -23,17 +23,68 @@ namespace BlogService
         public void CreateAUser(string username, string password)
         {
             UserRepository repository = new UserRepository();
-            repository.Insert(username,password);
+            try
+            {
+                repository.Insert(username, password);
+            }
+            catch (Exception e)
+            {
+                
+                throw e;
+            }
+            
 
         }
 
         public string RetrieveUser(int UserID)
         {
             UserRepository repository = new UserRepository();
-            var fromDb = repository.GetById(UserID);
-            return fromDb.UserName;
+            try
+            {
+                var fromDb = repository.GetById(UserID);
+                return fromDb.UserName;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception : {0}", e.Message);
+                throw e;
+            }
+            
+
+        }
+
+       
+        public void UpdateUser(int ID, string Name, string password)
+        {
+            UserRepository repository = new UserRepository();
+            try
+            {
+                repository.UpdateUser(ID, Name, password);
+            }
+            catch (Exception e)
+            {
+                
+                throw e;
+            }
+            
+        }
+
+
+        public void DeleteUser(int ID)
+        {
+            UserRepository repository = new UserRepository();
+            try
+            {
+                repository.DeleteUser(ID);
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
 
         }
         
+
     }
 }

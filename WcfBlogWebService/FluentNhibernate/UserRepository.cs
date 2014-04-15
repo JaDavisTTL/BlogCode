@@ -20,35 +20,75 @@ namespace Nhibernate
 
         public void Insert(string Name, string password)
         {
-             
-            // Create a Person...
             var User1 = new Users()
-            {
-                
-                UserName = Name,
-                Password = password
-            };
-
-            
-
+                {
+                    UserName = Name,
+                    Password = password
+                };
             // And save it to the database
             using (ISession session = NHibernateHelper.OpenSession())
-            using (ITransaction transaction = session.BeginTransaction())
+            using (var transaction = session.BeginTransaction())
             {
                 try
                 {
                     session.Save(User1);
-                    //NHibernateHelper.OpenSession().Flush();
                     transaction.Commit();
                 }
-                catch (Exception exception)
+                catch (Exception )
                 {
-                        
+
                     throw;
                 }
+
+            }
+
+        }
+
+        public void UpdateUser(int ID, string Name, string password)
+        {
+            try
+            {
+                using (var session = NHibernateHelper.OpenSession())
+                {
+                    using (var transaction = session.BeginTransaction())
+                    {
+                       
+                        var singleUser = session.Load<Users>(ID);
+                        singleUser.UserName = Name;
+                        singleUser.Password = password;
+                        transaction.Commit();
+                    }
+                }
+            }
+            catch (Exception )
+            {
                 
+                throw;
             }
             
         }
+
+        public void DeleteUser(int ID)
+        {
+            try
+            {
+                using (var session = NHibernateHelper.OpenSession())
+                {
+                    using (var transaction = session.BeginTransaction())
+                    {
+                        var singleUser = session.Load<Users>(ID);
+                        session.Delete(singleUser);
+                        transaction.Commit();
+                    }
+                }
+            }
+            catch (Exception )
+            {
+
+                throw;
+            }
+
+        }
+
     }
 }

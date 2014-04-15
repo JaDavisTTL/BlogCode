@@ -21,5 +21,8 @@ namespace BlogService
 
         [OperationContract]
         string RetrieveUser(int ID);
+
+        [OperationContract]
+        void UpdateUser(int ID,string Name, string password);
     }
 }
