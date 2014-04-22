@@ -12,7 +12,7 @@ namespace Nhibernate
         Users GetById(int Id);
         void UpdateUser(int ID, string Name, string password);
         void Insert(string Name, string password);
-
+        void DeleteUser(int ID);
 
     }
 }

@@ -18,9 +18,18 @@ namespace TestProject_WebserviceToDb
         {
 
             UserRepository repository = new UserRepository();
-            repository.Insert("Kannappan","Kanna123");
-            var fromDb = repository.GetById(17);
-            Assert.IsNotNull(fromDb);
+            try
+            {
+                repository.Insert("Kannappan", "Kanna123");
+            }
+            catch (Exception ex)
+            {
+                
+               Console.WriteLine(ex.Message);
+            }
+            
+            var fromDb = repository.GetById(16);
+            //Assert.IsNotNull(fromDb);
             repository.UpdateUser(1,"Alan","QWERT");
             fromDb = repository.GetById(18);
             Assert.IsNotNull(fromDb);

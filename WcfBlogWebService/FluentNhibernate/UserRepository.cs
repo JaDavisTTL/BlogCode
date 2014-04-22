@@ -13,8 +13,18 @@ namespace Nhibernate
         
         public Users GetById(int Id)
         {
-            using (ISession session = NHibernateHelper.OpenSession())
-                return session.Get<Users>(Id);
+            try
+            {
+                using (ISession session = NHibernateHelper.OpenSession())
+                    return session.Get<Users>(Id);
+            }
+
+
+            catch (Exception e)
+            {
+
+                throw e;
+            }
 
         }
 
@@ -34,10 +44,10 @@ namespace Nhibernate
                     session.Save(User1);
                     transaction.Commit();
                 }
-                catch (Exception )
+                catch (Exception e)
                 {
 
-                    throw;
+                    throw e;
                 }
 
             }
@@ -52,7 +62,7 @@ namespace Nhibernate
                 {
                     using (var transaction = session.BeginTransaction())
                     {
-                       
+
                         var singleUser = session.Load<Users>(ID);
                         singleUser.UserName = Name;
                         singleUser.Password = password;
@@ -60,10 +70,14 @@ namespace Nhibernate
                     }
                 }
             }
-            catch (Exception )
+            catch (ObjectNotFoundException)
             {
-                
-                throw;
+                throw new Exception("No records found for the given ID.");
+            }
+            catch (Exception e)
+            {
+
+                throw e;
             }
             
         }
@@ -82,10 +96,10 @@ namespace Nhibernate
                     }
                 }
             }
-            catch (Exception )
+            catch (Exception e)
             {
 
-                throw;
+                throw e;
             }
 
         }

@@ -27,9 +27,10 @@ namespace BlogService
             {
                 repository.Insert(username, password);
             }
+
             catch (Exception e)
             {
-                
+
                 throw e;
             }
             
@@ -44,10 +45,16 @@ namespace BlogService
                 var fromDb = repository.GetById(UserID);
                 return fromDb.UserName;
             }
+            /*catch (NullReferenceException)
+            {
+                throw new Exception("No records were found for this ID.");
+                return null;
+            }*/
             catch (Exception e)
             {
-                Console.WriteLine("Exception : {0}", e.Message);
+                //Console.WriteLine("Exception : {0}", e.Message);
                 throw e;
+                return null;
             }
             
 
