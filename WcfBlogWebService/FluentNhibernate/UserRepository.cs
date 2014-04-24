@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NHibernate;
+using NHibernate.Criterion;
+using NHibernate.Linq;
 using Nhibernate.DomainClasses;
 
 namespace Nhibernate
@@ -11,6 +13,12 @@ namespace Nhibernate
     public class UserRepository : IUserRepository
     {
         
+        public int Maxid()
+        {
+
+            using (ISession session = NHibernateHelper.OpenSession())
+                return (int)session.Query<Users>().Max(x => (int?) x.ID);
+        }
         public Users GetById(int Id)
         {
             try

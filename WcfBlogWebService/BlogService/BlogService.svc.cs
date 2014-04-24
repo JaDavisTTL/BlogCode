@@ -43,18 +43,20 @@ namespace BlogService
             try
             {
                 var fromDb = repository.GetById(UserID);
+                if (fromDb == null)
+                {
+                    throw new FaultException("No records were found for this ID.");
+                }
                 return fromDb.UserName;
             }
-            /*catch (NullReferenceException)
+            catch (FaultException)
             {
-                throw new Exception("No records were found for this ID.");
-                return null;
-            }*/
-            catch (Exception e)
+                throw;
+            }
+            catch (Exception)
             {
                 //Console.WriteLine("Exception : {0}", e.Message);
-                throw e;
-                return null;
+                throw new FaultException("Something has gone a bit wrong");
             }
             
 
