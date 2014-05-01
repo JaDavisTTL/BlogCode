@@ -1,0 +1,41 @@
+1) Download and install Microsoft SQL Server Management Studio
+2) Run Microsoft SQL Server Management Studio as administrator
+2) Login to Microsoft SQL Server Management Studio using the below details:
+		Server type: Database Engine
+		Server name: [Machine Name] e.g. TTL001443
+		Authentication: Windows Authentication
+
+* If you do not have permission to log into this then see the "Login to SQL Server Troubleshoot" section below.
+
+3) Right click on Databases and click New Database
+4) Name the Database "BlogDB" and click OK
+5) Expand the Databases tab
+6) Right clock on BlogDB and select New Query
+7) Run the following query to create the Users table
+
+	CREATE TABLE Users
+	(
+  	ID int PRIMARY KEY IDENTITY,
+  	UserName varchar(255),
+  	Password varchar(255)
+	)
+
+----------------------------------------------------------------------------------------------
+
+Login to SQL Server Troubleshoot
+
+1) Login to Microsoft SQL Server Management Studio using the below details
+		Server type: Database Engine
+		Server name: [Machine Name] e.g. TTL001443
+		Authentication: SQL Server Authentication
+		Login: SA
+		Password: !bcde1234
+
+2) Expand the Security tab
+3) Expand the Logins tab
+4) Right click and select New Login
+5) For the Login name either use BUILTIN\Administrators or your Windows credentials
+6) Go to Server Roles and select sysadmin
+7) Click OK
+8) Log out and log back in using windows Authentication
+
