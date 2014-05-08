@@ -26,7 +26,7 @@ namespace Adminwebsite.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/WebService/BlogService.svc")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/service/BlogService.svc")]
         public string Adminwebsite_localhost_BlogService {
             get {
                 return ((string)(this["Adminwebsite_localhost_BlogService"]));

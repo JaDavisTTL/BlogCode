@@ -20,6 +20,8 @@ namespace AdminPage.Controllers
             ViewBag.Message = admin2Webservice.HelloBloggers();
 
             return View();
+
+   
         }
 
 

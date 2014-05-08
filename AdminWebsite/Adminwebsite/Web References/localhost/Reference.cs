@@ -31,6 +31,8 @@ namespace Adminwebsite.localhost {
         
         private System.Threading.SendOrPostCallback HelloBloggersOperationCompleted;
         
+        private System.Threading.SendOrPostCallback ReplayUsernameOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -73,6 +75,9 @@ namespace Adminwebsite.localhost {
         public event HelloBloggersCompletedEventHandler HelloBloggersCompleted;
         
         /// <remarks/>
+        public event ReplayUsernameCompletedEventHandler ReplayUsernameCompleted;
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IBlogService/HelloBloggers", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public string HelloBloggers() {
@@ -97,6 +102,36 @@ namespace Adminwebsite.localhost {
             if ((this.HelloBloggersCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.HelloBloggersCompleted(this, new HelloBloggersCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IBlogService/ReplayUsername", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string ReplayUsername([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string UserNameEcho) {
+            object[] results = this.Invoke("ReplayUsername", new object[] {
+                        UserNameEcho});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ReplayUsernameAsync(string UserNameEcho) {
+            this.ReplayUsernameAsync(UserNameEcho, null);
+        }
+        
+        /// <remarks/>
+        public void ReplayUsernameAsync(string UserNameEcho, object userState) {
+            if ((this.ReplayUsernameOperationCompleted == null)) {
+                this.ReplayUsernameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnReplayUsernameOperationCompleted);
+            }
+            this.InvokeAsync("ReplayUsername", new object[] {
+                        UserNameEcho}, this.ReplayUsernameOperationCompleted, userState);
+        }
+        
+        private void OnReplayUsernameOperationCompleted(object arg) {
+            if ((this.ReplayUsernameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ReplayUsernameCompleted(this, new ReplayUsernameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -132,6 +167,32 @@ namespace Adminwebsite.localhost {
         private object[] results;
         
         internal HelloBloggersCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void ReplayUsernameCompletedEventHandler(object sender, ReplayUsernameCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ReplayUsernameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ReplayUsernameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

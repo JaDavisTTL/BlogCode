@@ -343,10 +343,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost/WebService/BlogService.svc">
+    <WebReferenceUrl Include="http://localhost/service/BlogService.svc">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\localhost\</RelPath>
-      <UpdateFromURL>http://localhost/WebService/BlogService.svc</UpdateFromURL>
+      <UpdateFromURL>http://localhost/service/BlogService.svc</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
