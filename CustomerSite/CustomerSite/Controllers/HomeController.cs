@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CustomerSite.CustomerWebservice;
@@ -15,22 +16,29 @@ namespace CustomerSite.Controllers
 
         public ActionResult Index(string UserNameEcho)
         {
-          CustomerWebservice.BlogService obj = new BlogService();
-
-            if (UserNameEcho==null)
+            var blogService = new BlogService();
+         
+            try
             {
-              //  ViewBag.Message = "Please enter a username in the above field";
-                return View();
+                if (String.IsNullOrWhiteSpace(UserNameEcho))
+                {
+                    ViewBag.Message = "Please enter a username in the above field.";
+                    return View();
+                }
+                else
+                {
+                    ViewBag.Message = blogService.ReplayUsername(UserNameEcho);
+                    return View();
+                }
             }
-            else 
+            catch (WebException e)
             {
-                ViewBag.Message = obj.ReplayUsername(UserNameEcho);
-                return View();
+                ViewBag.Message = "The web service could not be found: (" + e.Status.ToString() +") Please try again later." ;
             }
+            return View();
         }
+
         
-
-
         public ActionResult About()
         {
             ViewBag.Message = "Your app description page.";
