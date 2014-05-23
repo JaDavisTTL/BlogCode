@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Web.Services;
 
 namespace BlogService
 {
@@ -17,5 +18,12 @@ namespace BlogService
         {
            return("Hello Bloggers use our Services available!!!");
         }
+
+       
+        public string ReplayUsername(string UserNameEcho)
+        {
+            return ("Hello " + UserNameEcho + ", welcome to the customer site!!!");
+        }
+
     }
 }

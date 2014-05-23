@@ -1,4 +1,5 @@
-﻿@{
+﻿@model CustomerSite.Models.Echo
+@{
     ViewBag.Title = "Customer Page";
 }
 @section featured {
@@ -7,6 +8,29 @@
             <hgroup class="title">
                 <p><h1>@ViewBag.Title.</h1>
                 </p>
+
+<section id="Echo1">
+<h2>Echoing your name.</h2>
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+
+    <form>
+    <fieldset>
+        <legend>Your Name</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserNameEcho)
+                @Html.TextBoxFor(m => m.UserNameEcho)
+              
+            </li>
+            
+        </ol>
+        
+    
+        <input type="submit" value="Echo" id="btnSave"/>
+    </fieldset>
+   </form>
+}
+</section>
                 <p>
                 <h2>@ViewBag.Message</h2>
                 </p>
@@ -14,3 +38,5 @@
         </div>
     </section>
 }
+
+
