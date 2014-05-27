@@ -31,9 +31,13 @@ namespace CustomerSite.Controllers
                     return View();
                 }
             }
-            catch (WebException e)
+            catch (WebException webException)
             {
-                ViewBag.Message = "The web service could not be found: (" + e.Status.ToString() +") Please try again later." ;
+                ViewBag.Message = "The web service could not be found: " + webException.Message + ".";
+            }
+            catch (Exception e)
+            {
+                ViewBag.Message = "Error: " + e.Message + ".";
             }
             return View();
         }
