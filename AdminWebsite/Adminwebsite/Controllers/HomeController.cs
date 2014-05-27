@@ -28,8 +28,8 @@ namespace AdminPage.Controllers
 
         public ActionResult Index(string echoInput)
         {
-            //Adminwebsite.service.BlogServiceClient obj = new BlogServiceClient();
-            Adminwebsite.localhost.BlogService obj = new BlogService();
+            Adminwebsite.service.BlogServiceClient obj = new BlogServiceClient();   // Web Reference
+            //Adminwebsite.localhost.BlogService obj = new BlogService();           // Service Reference
             if (echoInput == null)
             {
                 return View();
