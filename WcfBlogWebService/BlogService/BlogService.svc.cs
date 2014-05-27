@@ -17,5 +17,10 @@ namespace BlogService
         {
            return("Hello Bloggers . We have consumed web Service Successfully!!!");
         }
+
+        public string EchoUserInput(string echoInput)
+        {
+            return ("Hello Admin. We have received & processed your Input. And it is: " + echoInput);
+        }
     }
 }

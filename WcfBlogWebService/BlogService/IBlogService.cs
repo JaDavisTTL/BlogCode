@@ -15,5 +15,8 @@ namespace BlogService
 
         [OperationContract]
         string HelloBloggers();
+
+        [OperationContract]
+        string EchoUserInput(string echoInput);
     }
 }

@@ -94,4 +94,11 @@ namespace Adminwebsite.Models
         public string ProviderDisplayName { get; set; }
         public string ProviderUserId { get; set; }
     }
+
+    public class Echo
+    {
+        [Required]
+        [Display(Name = "Please enter your input")]
+        public string echoInput { get; set; }
+    }
 }

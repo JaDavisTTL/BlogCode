@@ -1,18 +1,40 @@
-﻿@{
-    ViewBag.Title = "Admin Page";
+﻿@model Adminwebsite.Models.Echo
+@{
+    ViewBag.Title = "This is the Admin Website!!!";
 }
 @section featured {
     <section class="featured">
         <div class="content-wrapper">
             <hgroup class="title">
-                <li>
-                    <h1>@ViewBag.Title.</h1>
-                </li>
-                <li>
-                    <h2>@ViewBag.Message</h2>
-                </li>
+                <p><h1>@ViewBag.Title</h1>
+                </p>
+
+<section id="Echo1">
+<h2>Replaying User Input.</h2>
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+
+    <form>
+    <fieldset>
+        <legend>Your Input</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.echoInput)
+                @Html.TextBoxFor(m => m.echoInput)
+              
+            </li>
+            
+        </ol>
+        
+    
+        <input type="submit" value="Echo" id="btnSave" onclick="DoValidation"/>
+    </fieldset>
+   </form>
+}
+</section>
+                <p>
+                <h2>@ViewBag.Message</h2>
+                </p>
             </hgroup>
         </div>
     </section>
 }
-
