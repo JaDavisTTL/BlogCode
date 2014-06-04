@@ -13,6 +13,7 @@ namespace BlogService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class BlogService : IBlogService
     {
+        private string BlogPost { get; set; }
 
         public string HelloBloggers()
         {
@@ -20,10 +21,14 @@ namespace BlogService
         }
 
        
-        public string ReplayUsername(string UserNameEcho)
+        public void PostNewEntry(string newBlogEntry)
         {
-            return ("Hello " + UserNameEcho + ", welcome to the customer site!!!");
+            BlogPost = newBlogEntry;
         }
 
+        public string ReturnEntries()
+        {
+            return BlogPost;
+        }
     }
 }

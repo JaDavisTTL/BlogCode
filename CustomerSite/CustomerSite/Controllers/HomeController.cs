@@ -6,38 +6,33 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CustomerSite.CustomerWebservice;
+using Microsoft.Ajax.Utilities;
 
 namespace CustomerSite.Controllers
 {
      
     public class HomeController : Controller
     {
-       
 
-        public ActionResult Index(string UserNameEcho)
+        BlogService blogService = new BlogService();
+
+        public ActionResult Index()
         {
-            var blogService = new BlogService();
-         
+
             try
             {
-                if (String.IsNullOrWhiteSpace(UserNameEcho))
+                if (String.IsNullOrWhiteSpace(blogService.ReturnEntries()))
                 {
-                    ViewBag.Message = "Please enter a username in the above field.";
                     return View();
                 }
                 else
                 {
-                    ViewBag.Message = blogService.ReplayUsername(UserNameEcho);
-                    return View();
+                    ViewBag.Message = blogService.ReturnEntries();
                 }
             }
-            catch (WebException webException)
+            catch (Exception e) //fix this properly later :P
             {
-                ViewBag.Message = "The web service could not be found: " + webException.Message + ".";
-            }
-            catch (Exception e)
-            {
-                ViewBag.Message = "Error: " + e.Message + ".";
+                ViewBag.Message = e.Message;
             }
             return View();
         }
@@ -54,6 +49,34 @@ namespace CustomerSite.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult NewPost(string newBlogEntry)
+        {
+            //var blogService = new BlogService();
+
+            try
+            {
+                if (String.IsNullOrWhiteSpace(newBlogEntry))
+                {
+                    return View();
+                }
+                else
+                {
+                    blogService.PostNewEntry(newBlogEntry);
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (WebException webException)
+            {
+                ViewBag.Message = "The web service could not be found: " + webException.Message + ".";
+            }
+            catch (Exception e)
+            {
+                ViewBag.Message = "Error: " + e.Message;
+                Console.WriteLine(newBlogEntry);
+            }
             return View();
         }
 

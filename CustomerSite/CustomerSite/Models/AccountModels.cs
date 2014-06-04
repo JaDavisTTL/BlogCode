@@ -55,11 +55,11 @@ namespace CustomerSite.Models
         public string ConfirmPassword { get; set; }
     }
 
-    public class Echo
+    public class NewPostModel
     {
         [Required]
-        [Display(Name = "Your Name")]
-        public string UserNameEcho { get; set; }
+        //[Display(Name = "Your Name")]
+        public string NewBlogEntry { get; set; }
     }
 
     public class LoginModel

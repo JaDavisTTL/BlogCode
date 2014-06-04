@@ -1,0 +1,35 @@
+﻿@model CustomerSite.Models.NewPostModel
+@{
+    ViewBag.Title = "Post a new entry";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                    <div class="float-right">
+                        @Html.ActionLink("[<] Home", "Index", "Home")
+                    </div>
+                </p>
+
+                <section id="Echo1">
+<h3>Post a new entry:</h3>
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+
+    <form>
+    <fieldset>
+        <ol>
+            <li>
+                @Html.TextBoxFor(m => m.NewBlogEntry)
+            </li>
+        </ol>
+        <input type="submit" value="Post" />
+    </fieldset>
+   </form>
+}
+</section>
+            </hgroup>
+        </div>
+    </section>
+}
+
+

@@ -12,17 +12,27 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ReplayUsername">
+  <xs:element name="PostNewEntry">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="UserNameEcho" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newBlogEntry" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ReplayUsernameResponse">
+  <xs:element name="PostNewEntryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnEntries">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnEntriesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="ReplayUsernameResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ReturnEntriesResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

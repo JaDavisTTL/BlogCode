@@ -17,6 +17,10 @@ namespace BlogService
         string HelloBloggers();
 
         [OperationContract]
-        string ReplayUsername(string UserNameEcho);
+        void PostNewEntry(string newBlogEntry);
+
+        [OperationContract]
+        string ReturnEntries();
+
     }
 }

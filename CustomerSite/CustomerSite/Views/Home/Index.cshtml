@@ -1,35 +1,20 @@
-﻿@model CustomerSite.Models.Echo
+﻿@model CustomerSite.Models.NewPostModel
 @{
-    ViewBag.Title = "Customer Page";
+    ViewBag.Title = "Entries";
 }
 @section featured {
     <section class="featured">
         <div class="content-wrapper">
             <hgroup class="title">
-                <p><h1>@ViewBag.Title.</h1>
+                <p><h1>@ViewBag.Title</h1>
+                    <div class="float-right">
+                        @Html.ActionLink("[+] Post New Entry", "NewPost", "Home")
+                    </div>
                 </p>
 
-<section id="Echo1">
-<h2>Echoing your name.</h2>
-@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+                <section id="Echo1">
+<h2>Entries go here</h2>
 
-    <form>
-    <fieldset>
-        <legend>Your Name</legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.UserNameEcho)
-                @Html.TextBoxFor(m => m.UserNameEcho)
-              
-            </li>
-            
-        </ol>
-        
-    
-        <input type="submit" value="Echo" id="btnSave"/>
-    </fieldset>
-   </form>
-}
 </section>
                 <p>
                 <h2>@ViewBag.Message</h2>

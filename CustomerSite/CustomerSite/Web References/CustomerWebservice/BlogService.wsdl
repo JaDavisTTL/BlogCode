@@ -12,20 +12,30 @@
   <wsdl:message name="IBlogService_HelloBloggers_OutputMessage">
     <wsdl:part name="parameters" element="tns:HelloBloggersResponse" />
   </wsdl:message>
-  <wsdl:message name="IBlogService_ReplayUsername_InputMessage">
-    <wsdl:part name="parameters" element="tns:ReplayUsername" />
+  <wsdl:message name="IBlogService_PostNewEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostNewEntry" />
   </wsdl:message>
-  <wsdl:message name="IBlogService_ReplayUsername_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ReplayUsernameResponse" />
+  <wsdl:message name="IBlogService_PostNewEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostNewEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlogService_ReturnEntries_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnEntries" />
+  </wsdl:message>
+  <wsdl:message name="IBlogService_ReturnEntries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnEntriesResponse" />
   </wsdl:message>
   <wsdl:portType name="IBlogService">
     <wsdl:operation name="HelloBloggers">
       <wsdl:input wsaw:Action="http://tempuri.org/IBlogService/HelloBloggers" message="tns:IBlogService_HelloBloggers_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBlogService/HelloBloggersResponse" message="tns:IBlogService_HelloBloggers_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ReplayUsername">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBlogService/ReplayUsername" message="tns:IBlogService_ReplayUsername_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBlogService/ReplayUsernameResponse" message="tns:IBlogService_ReplayUsername_OutputMessage" />
+    <wsdl:operation name="PostNewEntry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlogService/PostNewEntry" message="tns:IBlogService_PostNewEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlogService/PostNewEntryResponse" message="tns:IBlogService_PostNewEntry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnEntries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlogService/ReturnEntries" message="tns:IBlogService_ReturnEntries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlogService/ReturnEntriesResponse" message="tns:IBlogService_ReturnEntries_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBlogService" type="tns:IBlogService">
@@ -39,8 +49,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ReplayUsername">
-      <soap:operation soapAction="http://tempuri.org/IBlogService/ReplayUsername" style="document" />
+    <wsdl:operation name="PostNewEntry">
+      <soap:operation soapAction="http://tempuri.org/IBlogService/PostNewEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnEntries">
+      <soap:operation soapAction="http://tempuri.org/IBlogService/ReturnEntries" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
